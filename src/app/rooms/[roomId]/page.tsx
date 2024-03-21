@@ -35,8 +35,8 @@ export default async function RoomPage(props: { params: { roomId: string } }) {
 
           <div className="flex gap-2 flex-wrap">
             {tags.map((tag) => (
-              <Badge className="w-fit" key={lang}>
-                {lang}
+              <Badge className="w-fit" key={tag}>
+                {tag}
               </Badge>
             ))}
           </div>

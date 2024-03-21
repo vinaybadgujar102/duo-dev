@@ -13,4 +13,6 @@ export async function createRoomAction(roomData: Omit<Room, "id" | "userId">) {
   }
 
   await db.insert(room).values({ ...roomData, userId: session.user.id });
+
+  revalidatePath("/");
 }

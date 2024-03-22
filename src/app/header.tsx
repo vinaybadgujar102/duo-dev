@@ -62,6 +62,13 @@ export function Header() {
         >
           DueDev
         </Link>
+
+        <nav>
+          <Link className="hover:underline" href="/your-rooms">
+            Your Rooms
+          </Link>
+        </nav>
+
         <div className="flex items-center gap-4">
           {session.data && <AccountDropdown />}
           {!session.data && (

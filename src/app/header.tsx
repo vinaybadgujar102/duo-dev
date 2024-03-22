@@ -17,7 +17,6 @@ import Link from "next/link";
 
 function AccountDropdown() {
   const session = useSession();
-  const isLoggedIn = !!session.data;
 
   return (
     <DropdownMenu>
@@ -33,22 +32,17 @@ function AccountDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuSeparator />
-        {isLoggedIn ? (
-          <DropdownMenuItem onClick={() => signOut()}>
-            <LogOutIcon className="mr-2" />
-            Sign Out
-          </DropdownMenuItem>
-        ) : (
-          <DropdownMenuItem
-            onClick={(e) => {
-              e.preventDefault();
-              signIn("google");
-            }}
-          >
-            <LogInIcon className="mr-2" />
-            Sign In
-          </DropdownMenuItem>
-        )}
+
+        <DropdownMenuItem
+          onClick={() =>
+            signOut({
+              callbackUrl: "/",
+            })
+          }
+        >
+          <LogOutIcon className="mr-2" />
+          Sign Out
+        </DropdownMenuItem>
         <DropdownMenuItem>Billing</DropdownMenuItem>
         <DropdownMenuItem>Team</DropdownMenuItem>
         <DropdownMenuItem>Subscription</DropdownMenuItem>
@@ -58,6 +52,7 @@ function AccountDropdown() {
 }
 
 export function Header() {
+  const session = useSession();
   return (
     <header className="bg-gray-100 py-2 dark:bg-gray-900 container mx-auto">
       <div className="flex justify-between items-center">
@@ -68,8 +63,19 @@ export function Header() {
           DueDev
         </Link>
         <div className="flex items-center gap-4">
-          <AccountDropdown />
-
+          {session.data && <AccountDropdown />}
+          {!session.data && (
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                signIn();
+              }}
+              variant={"link"}
+            >
+              <LogInIcon className="mr-2" />
+              Sign In
+            </Button>
+          )}
           <ModeToggle />
         </div>
       </div>

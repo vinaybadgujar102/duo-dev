@@ -3,7 +3,7 @@ import Link from "next/link";
 import { UserRoomCard } from "./user-room-card";
 import { unstable_noStore } from "next/cache";
 import Image from "next/image";
-import { getUserRooms } from "../page";
+import { getUserRooms } from "../data-access/room";
 
 export default async function YourRoomsPage() {
   unstable_noStore();

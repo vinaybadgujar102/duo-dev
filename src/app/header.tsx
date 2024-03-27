@@ -102,7 +102,7 @@ export function Header() {
           href="/"
           className="flex gap-2 items-center text-xl hover:underline"
         >
-          DevFinder
+          DuoDev
         </Link>
 
         <nav className="flex gap-8">

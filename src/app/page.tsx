@@ -1,6 +1,4 @@
-import FeatureCards from "@/components/FeatureCards";
 import Features from "@/components/Features";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function LandingPage() {

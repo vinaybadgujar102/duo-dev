@@ -1,4 +1,4 @@
-import Features from "@/components/Features";
+import Steps from "@/components/Steps";
 import Link from "next/link";
 
 export default function LandingPage() {
@@ -36,7 +36,13 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <Features />
+        <h3 className="text-xl font-bold tracking-tight text-gray-900 text-center dark:text-white sm:text-3xl pb-4">
+          How it works
+        </h3>
+        <p className="mb-4 text-center text-lg leading-8 text-gray-600 dark:text-gray-200">
+          Pair programming in 3 simple steps
+        </p>
+        <Steps />
       </div>
     </div>
   );

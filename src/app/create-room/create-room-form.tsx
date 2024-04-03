@@ -97,6 +97,7 @@ export function CreateRoomForm() {
                 <Input
                   {...field}
                   placeholder="https://github.com/project-url"
+                  type="url"
                 />
               </FormControl>
               <FormDescription>

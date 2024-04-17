@@ -48,7 +48,7 @@ const StepCard = ({
   icon: React.ReactNode;
 }) => {
   return (
-    <div>
+    <div className="flex">
       <Card className="w-96 h-64 flex flex-col justify-center items-center">
         <CardHeader>
           <div className="self-center h-10 w-10 mb-2">{icon}</div>
